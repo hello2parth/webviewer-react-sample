@@ -1,0 +1,45 @@
+import { useState } from "react";
+import "./SmartSpec.css";
+import { getDropDownData, mockData } from "./utils";
+// import Dropdown, { Trigger } from "eg-shared/components/Dropdown";
+// import { Menu, MenuItem } from "eg-shared/components/Menu";
+import { Select, Input } from "eg-shared/components/Input";
+import Icon, { close, magnify } from "eg-shared/components/Icon";
+
+const options = getDropDownData()
+
+const SmartSpec = () => {
+
+
+  const [selected, setSelected] = useState(options[0].value);
+
+  return (
+    <div className="smartSpec">
+         <Select
+            data-tid="esign-select-field-style"
+            options={options}
+            value={selected}
+            onChange={value => {
+              setSelected(value)
+            }}
+          />
+          <Input onChange={()=>{}}
+             endAdornment={<Icon icon={close} size={Icon.sizes.M} />}
+            //  width={WIDTH.MEDIUM}
+             startAdornment={<Icon icon={magnify} size={Icon.sizes.M} />}
+         />
+
+<div>
+
+  {(() => {
+    const selectedData = mockData[selected];
+    return (<div>
+      {JSON.stringify(selectedData)}
+    </div>);
+  })()}
+</div>
+    </div>
+  );
+};
+
+export default SmartSpec;
