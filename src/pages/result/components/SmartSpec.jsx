@@ -1,8 +1,6 @@
 import { useState } from "react";
 import styles from "./SmartSpec.module.scss";
 import { getDropDownData, mockData } from "./utils";
-// import Dropdown, { Trigger } from "eg-shared/components/Dropdown";
-// import { Menu, MenuItem } from "eg-shared/components/Menu";
 import { Select, Input } from "eg-shared/components/Input";
 import Icon, { close, magnify } from "eg-shared/components/Icon";
 
